@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { EnvelopeSimple, InstagramLogo, MapPin, Phone } from "@phosphor-icons/react/dist/ssr";
 
 const nav = [
@@ -14,10 +15,23 @@ export function SiteFooter() {
       <div className="mx-auto max-w-6xl px-5 py-16 md:px-8">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4 lg:gap-8">
           <div>
-            <p className="font-serif text-xl tracking-tight text-ink">Universo</p>
-            <p className="text-[10px] font-medium uppercase tracking-[0.22em] text-muted">
-              Paisagismo
-            </p>
+            <div className="flex items-center gap-3">
+              <div className="relative h-10 w-10 flex-shrink-0">
+                <Image
+                  src="/logo/logo verde dourado sem fundo.png"
+                  alt="Logo Universo Paisagismo"
+                  fill
+                  sizes="40px"
+                  className="object-contain"
+                />
+              </div>
+              <div className="flex flex-col leading-none">
+                <p className="font-serif text-xl tracking-tight text-ink">Universo</p>
+                <p className="text-[10px] font-medium uppercase tracking-[0.22em] text-muted">
+                  Paisagismo
+                </p>
+              </div>
+            </div>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted">
               Transformamos espaços em ambientes memoráveis. Mais de duzentos jardins em
               Belo Horizonte e região metropolitana.

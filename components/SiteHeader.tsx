@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { List, X } from "@phosphor-icons/react";
@@ -18,18 +19,30 @@ export function SiteHeader() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-40 border-b border-line/80 bg-canvas/80 backdrop-blur-md">
-      <div className="mx-auto flex h-14 max-w-6xl items-center justify-between px-5 md:h-16 md:px-8">
+      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 md:h-20 md:px-8">
         <Link
           href="/"
-          className="group flex flex-col leading-none"
+          className="group flex items-center gap-3 leading-none"
           onClick={() => setOpen(false)}
         >
-          <span className="font-serif text-lg tracking-tight text-ink md:text-xl">
-            Universo
-          </span>
-          <span className="text-[10px] font-medium uppercase tracking-[0.22em] text-muted">
-            Paisagismo
-          </span>
+          <div className="relative h-12 w-12 flex-shrink-0 md:h-14 md:w-14 animate-spin-horizontal">
+            <Image
+              src="/logo/logo verde dourado sem fundo.png"
+              alt="Logo Universo Paisagismo"
+              fill
+              sizes="56px"
+              priority
+              className="object-contain"
+            />
+          </div>
+          <div className="flex flex-col">
+            <span className="font-serif text-lg tracking-tight text-ink md:text-xl">
+              Universo
+            </span>
+            <span className="text-[10px] font-medium uppercase tracking-[0.22em] text-muted">
+              Paisagismo
+            </span>
+          </div>
         </Link>
 
         <nav className="hidden items-center gap-10 md:flex" aria-label="Principal">

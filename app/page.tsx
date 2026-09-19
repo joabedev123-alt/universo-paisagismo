@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import {
   ArrowRight,
   Cube,
@@ -41,35 +42,33 @@ export default function HomePage() {
   return (
     <>
       <HeroLandscape3D>
-        <div className="pt-20 md:pt-24">
-          <Reveal>
-            <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted">
-              Belo Horizonte e região
-            </p>
-            <h1 className="mt-6 font-serif text-[2.65rem] leading-[1.05] tracking-tight text-ink md:text-6xl md:leading-[1.02]">
-              Transforme seu jardim em ambiente de destaque
-            </h1>
-            <p className="mt-6 max-w-[52ch] text-base leading-relaxed text-muted">
-              Projetos sob medida, execução cuidadosa e manutenção. Visualização em 3D para
-              decidir com calma antes da primeira pá no terreno.
-            </p>
-            <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">
-              <Link
-                href="/contato"
-                className="inline-flex items-center justify-center rounded-md bg-brand px-6 py-3 text-sm font-medium text-white transition-transform hover:bg-brand-hover active:scale-[0.98]"
-              >
-                Pedir orçamento
-              </Link>
-              <Link
-                href="/portfolio"
-                className="inline-flex items-center justify-center gap-2 text-sm font-medium text-ink underline-offset-4 hover:underline"
-              >
-                Ver portfólio
-                <ArrowRight size={18} weight="bold" aria-hidden />
-              </Link>
-            </div>
-          </Reveal>
-        </div>
+        <Reveal>
+          <p className="font-mono text-sm font-semibold uppercase tracking-[0.22em] text-brand md:text-base">
+            Belo Horizonte e região
+          </p>
+          <h1 className="mt-4 font-serif text-[2.65rem] leading-[1.05] tracking-tight text-ink md:text-6xl md:leading-[1.02]">
+            Transforme seu jardim em ambiente de destaque
+          </h1>
+          <p className="mt-6 max-w-[52ch] text-base leading-relaxed text-muted">
+            Projetos sob medida, execução cuidadosa e manutenção. Visualização em 3D para
+            decidir com calma antes da primeira pá no terreno.
+          </p>
+          <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">
+            <Link
+              href="/contato"
+              className="inline-flex items-center justify-center rounded-md bg-brand px-6 py-3 text-sm font-medium text-white transition-transform hover:bg-brand-hover active:scale-[0.98]"
+            >
+              Pedir orçamento
+            </Link>
+            <Link
+              href="/portfolio"
+              className="inline-flex items-center justify-center gap-2 text-sm font-medium text-ink underline-offset-4 hover:underline"
+            >
+              Ver portfólio
+              <ArrowRight size={18} weight="bold" aria-hidden />
+            </Link>
+          </div>
+        </Reveal>
       </HeroLandscape3D>
       <div className="border-t border-line bg-white">
         <div className="mx-auto grid max-w-6xl grid-cols-3 divide-x divide-line px-5 py-10 md:px-8">
@@ -110,12 +109,18 @@ export default function HomePage() {
               </Link>
             </Reveal>
             <Reveal delayMs={100} className="lg:col-span-7">
-              <PortfolioFigure
-                seed="up-about-palms"
-                alt="Paisagismo com palmeiras e área verde — Universo Paisagismo"
-                className="aspect-[16/10] rounded-xl border border-line"
-                sizes="(max-width: 1024px) 100vw, 55vw"
-              />
+              <div className="relative overflow-hidden rounded-2xl border border-line bg-white/70 p-2 shadow-[0_12px_40px_rgba(61,111,86,0.12)]">
+                <div className="relative aspect-[16/10] w-full overflow-hidden rounded-xl bg-line/30">
+                  <Image
+                    src="/portfolio/01.jpeg"
+                    alt="Paisagismo e criação de jardins — Universo Paisagismo"
+                    width={1600}
+                    height={900}
+                    className="h-full w-full object-cover transition-transform duration-700 ease-out hover:scale-[1.02]"
+                    sizes="(max-width: 1024px) 100vw, 55vw"
+                  />
+                </div>
+              </div>
             </Reveal>
           </div>
         </div>
