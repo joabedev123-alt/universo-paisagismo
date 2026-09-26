@@ -52,7 +52,7 @@ export default function RootLayout({
       <body className="font-sans">
         <div className="grain" aria-hidden />
         <SiteHeader />
-        <main className="pt-14 md:pt-16">{children}</main>
+        <main className="pt-20 md:pt-24 min-h-[calc(100vh-80px)] overflow-x-hidden">{children}</main>
         <SiteFooter />
       </body>
     </html>

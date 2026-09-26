@@ -3,50 +3,51 @@ export type PortfolioItem = {
   title: string;
   tag: string;
   description: string;
-  imageSeed: string;
+  imageSeed?: string;
+  imageSrc: string;
 };
 
 export const portfolioItems: PortfolioItem[] = [
   {
-    slug: "execucao-paisagistica",
-    title: "Execução paisagística",
-    tag: "Execução",
-    description: "Transformação completa de área externa com plantio, drenagem e acabamento.",
-    imageSeed: "up-exec-01",
+    slug: "projetos-3d",
+    title: "Projetos 3D",
+    tag: "Projetos 3D",
+    description: "Visualização realista em 3D, planta humanizada e maquetes detalhadas para decidir com clareza antes da obra.",
+    imageSrc: "/projetos-3d/ad01.png",
   },
   {
-    slug: "tropical-moderno",
-    title: "Tropical moderno",
-    tag: "Moderno",
-    description: "Área de lazer com espécies tropicais e vasos em composição contemporânea.",
-    imageSeed: "up-trop-02",
+    slug: "paisagismo",
+    title: "Paisagismo",
+    tag: "Paisagismo",
+    description: "Criação, composição e revitalização de ambientes externos e internos com espécies selecionadas para BH e região.",
+    imageSrc: "/portfolio/01.jpeg",
   },
   {
-    slug: "projeto-tecnico",
-    title: "Projeto técnico executado",
-    tag: "Projeto 3D",
-    description: "Da planta baixa ao canteiro: especificações claras e obra acompanhada.",
-    imageSeed: "up-tech-03",
+    slug: "jardinagem",
+    title: "Jardinagem",
+    tag: "Jardinagem",
+    description: "Execução com preparo do solo, plantio técnico, adubação, podas e manutenção contínua para o jardim florescer.",
+    imageSrc: "/portfolio/02.jpeg",
   },
   {
-    slug: "jardim-florido",
-    title: "Jardim florido",
-    tag: "Jardim florido",
-    description: "Camadas de floração ao longo das estações, com irrigação planejada.",
-    imageSeed: "up-flor-04",
-  },
-  {
-    slug: "palmeiras-ornamentais",
-    title: "Palmeiras ornamentais",
-    tag: "Palmeiras",
-    description: "Escala vertical e sombra filtrada integradas ao passeio e à residência.",
-    imageSeed: "up-palm-05",
-  },
-  {
-    slug: "consultoria",
-    title: "Consultoria paisagística",
+    slug: "consultoria-planejamento",
+    title: "Consultoria e Planejamento",
     tag: "Consultoria",
-    description: "Diagnóstico do espaço, sugestões de espécies e plano de fases.",
-    imageSeed: "up-cons-06",
+    description: "Diagnóstico completo de insolação, clima, drenagem e direcionamento de espécies para o seu espaço.",
+    imageSrc: "/projetos-3d/ac01.png",
+  },
+  {
+    slug: "revitalizacao-de-jardins",
+    title: "Revitalização de Jardins",
+    tag: "Revitalização",
+    description: "Transformação e renovação de canteiros, troca de substrato e enriquecimento paisagístico de áreas existentes.",
+    imageSrc: "/about/01.jpeg",
+  },
+  {
+    slug: "manutencao-especializada",
+    title: "Manutenção Especializada",
+    tag: "Manutenção",
+    description: "Acompanhamento periódico, controle fitossanitário e podas sazonais para preservar o investimento.",
+    imageSrc: "/hero-paisagem.png",
   },
 ];

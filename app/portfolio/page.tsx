@@ -36,9 +36,9 @@ export default function PortfolioPage() {
           <div className="grid gap-8 md:grid-cols-2">
             {portfolioItems.map((item, i) => (
               <Reveal key={item.slug} delayMs={(i % 4) * 50}>
-                <article className="flex h-full flex-col border border-line bg-white">
+                <article className="group flex h-full flex-col border border-line bg-white overflow-hidden rounded-xl transition-all duration-300 hover:shadow-[0_12px_36px_rgba(61,111,86,0.12)]">
                   <PortfolioFigure
-                    seed={item.imageSeed}
+                    imageSrc={item.imageSrc}
                     alt={`${item.title} — Universo Paisagismo`}
                     className="aspect-[16/11]"
                     sizes="(max-width: 768px) 100vw, 50vw"

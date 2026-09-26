@@ -15,19 +15,19 @@ export function SiteFooter() {
       <div className="mx-auto max-w-6xl px-5 py-16 md:px-8">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4 lg:gap-8">
           <div>
-            <div className="flex items-center gap-3">
-              <div className="relative h-10 w-10 flex-shrink-0">
+            <div className="flex items-center gap-4">
+              <div className="relative h-20 w-20 md:h-24 md:w-24 flex-shrink-0 animate-spin-horizontal">
                 <Image
                   src="/logo/logo verde dourado sem fundo.png"
                   alt="Logo Universo Paisagismo"
                   fill
-                  sizes="40px"
+                  sizes="96px"
                   className="object-contain"
                 />
               </div>
               <div className="flex flex-col leading-none">
-                <p className="font-serif text-xl tracking-tight text-ink">Universo</p>
-                <p className="text-[10px] font-medium uppercase tracking-[0.22em] text-muted">
+                <p className="font-serif text-2xl tracking-tight text-ink md:text-3xl">Universo</p>
+                <p className="text-[11px] font-medium uppercase tracking-[0.24em] text-muted mt-0.5">
                   Paisagismo
                 </p>
               </div>

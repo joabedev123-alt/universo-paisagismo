@@ -42,30 +42,31 @@ export default function HomePage() {
   return (
     <>
       <HeroLandscape3D>
-        <Reveal>
-          <p className="font-mono text-sm font-semibold uppercase tracking-[0.22em] text-brand md:text-base">
+        <Reveal className="flex flex-col items-center text-center mx-auto max-w-2xl">
+          <p className="font-mono text-sm font-semibold uppercase tracking-[0.24em] text-brand sm:text-base md:text-lg text-center">
             Belo Horizonte e região
           </p>
-          <h1 className="mt-4 font-serif text-[2.65rem] leading-[1.05] tracking-tight text-ink md:text-6xl md:leading-[1.02]">
-            Transforme seu jardim em ambiente de destaque
+          <h1 className="mt-4 font-serif text-3xl sm:text-5xl md:text-[3.6rem] lg:text-[4.1rem] leading-[1.08] md:leading-[1.04] tracking-tight text-ink text-center">
+            Transforme seu jardim
+            <span className="block">em ambiente de destaque</span>
           </h1>
-          <p className="mt-6 max-w-[52ch] text-base leading-relaxed text-muted">
+          <p className="mt-6 max-w-[50ch] text-lg sm:text-xl leading-relaxed text-muted text-center mx-auto">
             Projetos sob medida, execução cuidadosa e manutenção. Visualização em 3D para
             decidir com calma antes da primeira pá no terreno.
           </p>
-          <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">
+          <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center justify-center w-full">
             <Link
               href="/contato"
-              className="inline-flex items-center justify-center rounded-md bg-brand px-6 py-3 text-sm font-medium text-white transition-transform hover:bg-brand-hover active:scale-[0.98]"
+              className="inline-flex items-center justify-center rounded-md bg-brand px-7 py-3.5 text-base font-medium text-white transition-transform hover:bg-brand-hover active:scale-[0.98] shadow-sm hover:shadow-md"
             >
               Pedir orçamento
             </Link>
             <Link
               href="/portfolio"
-              className="inline-flex items-center justify-center gap-2 text-sm font-medium text-ink underline-offset-4 hover:underline"
+              className="inline-flex items-center justify-center gap-2 text-base font-medium text-ink underline-offset-4 hover:underline"
             >
               Ver portfólio
-              <ArrowRight size={18} weight="bold" aria-hidden />
+              <ArrowRight size={20} weight="bold" aria-hidden />
             </Link>
           </div>
         </Reveal>
@@ -108,18 +109,16 @@ export default function HomePage() {
                 <ArrowRight size={18} weight="bold" aria-hidden />
               </Link>
             </Reveal>
-            <Reveal delayMs={100} className="lg:col-span-7">
-              <div className="relative overflow-hidden rounded-2xl border border-line bg-white/70 p-2 shadow-[0_12px_40px_rgba(61,111,86,0.12)]">
-                <div className="relative aspect-[16/10] w-full overflow-hidden rounded-xl bg-line/30">
-                  <Image
-                    src="/portfolio/01.jpeg"
-                    alt="Paisagismo e criação de jardins — Universo Paisagismo"
-                    width={1600}
-                    height={900}
-                    className="h-full w-full object-cover transition-transform duration-700 ease-out hover:scale-[1.02]"
-                    sizes="(max-width: 1024px) 100vw, 55vw"
-                  />
-                </div>
+            <Reveal delayMs={100} className="lg:col-span-7 flex justify-center">
+              <div className="relative aspect-square w-full max-w-[460px] overflow-hidden rounded-2xl shadow-[0_16px_50px_rgba(61,111,86,0.14)] border border-line/60 bg-stone-900">
+                <Image
+                  src="/logo/logo verde dourado.jpeg"
+                  alt="Universo Paisagismo"
+                  width={1024}
+                  height={1024}
+                  className="h-full w-full object-cover transition-transform duration-700 ease-out hover:scale-[1.02]"
+                  sizes="(max-width: 1024px) 100vw, 55vw"
+                />
               </div>
             </Reveal>
           </div>
@@ -130,7 +129,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-6xl px-5 md:px-8">
           <Reveal className="max-w-2xl">
             <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted">
-              Como trabalhamos
+              Nosso trabalho
             </p>
             <h2 className="mt-4 font-serif text-4xl tracking-tight text-ink md:text-5xl">
               Clareza em cada etapa
@@ -202,12 +201,18 @@ export default function HomePage() {
               </Link>
             </Reveal>
             <Reveal delayMs={80} className="lg:col-span-6 lg:order-1">
-              <PortfolioFigure
-                seed="up-3d-render"
-                alt="Renderização de projeto paisagístico em perspectiva — Universo Paisagismo"
-                className="aspect-square rounded-xl border border-line md:aspect-[5/6]"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-              />
+              <div className="relative overflow-hidden rounded-2xl border border-line bg-white/70 p-2 shadow-[0_12px_40px_rgba(61,111,86,0.12)]">
+                <div className="relative aspect-[16/10] sm:aspect-[4/3] w-full overflow-hidden rounded-xl bg-line/30">
+                  <Image
+                    src="/hero01.png"
+                    alt="Renderização de projeto paisagístico em perspectiva — Universo Paisagismo"
+                    width={1711}
+                    height={919}
+                    className="h-full w-full object-cover transition-transform duration-700 ease-out hover:scale-[1.02]"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                  />
+                </div>
+              </div>
             </Reveal>
           </div>
         </div>
@@ -240,18 +245,18 @@ export default function HomePage() {
           <div className="mt-14 grid gap-6 md:grid-cols-3">
             {preview.map((item, i) => (
               <Reveal key={item.slug} delayMs={i * 70}>
-                <article className="group flex h-full flex-col border border-line bg-canvas">
+                <article className="group flex h-full flex-col border border-line bg-canvas overflow-hidden rounded-xl transition-all duration-300 hover:shadow-[0_10px_30px_rgba(61,111,86,0.1)]">
                   <PortfolioFigure
-                    seed={item.imageSeed}
-                    alt={`${item.title} — projeto Universo Paisagismo`}
+                    imageSrc={item.imageSrc}
+                    alt={`${item.title} — Universo Paisagismo`}
                     className="aspect-[4/3]"
                     sizes="(max-width: 768px) 100vw, 33vw"
                   />
                   <div className="flex flex-1 flex-col p-6">
-                    <span className="inline-flex w-fit rounded-full bg-accent-soft px-2.5 py-0.5 font-mono text-[10px] uppercase tracking-wider text-accent">
+                    <span className="inline-flex w-fit rounded-full bg-accent-soft px-2.5 py-0.5 font-mono text-[10px] uppercase tracking-wider text-accent font-medium">
                       {item.tag}
                     </span>
-                    <h3 className="mt-4 font-medium tracking-tight text-ink">{item.title}</h3>
+                    <h3 className="mt-4 font-serif text-xl tracking-tight text-ink">{item.title}</h3>
                     <p className="mt-2 flex-1 text-sm leading-relaxed text-muted">
                       {item.description}
                     </p>

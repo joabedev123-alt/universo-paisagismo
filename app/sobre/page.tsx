@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, CheckCircle } from "@phosphor-icons/react/dist/ssr";
 import { Reveal } from "@/components/Reveal";
-import { PortfolioFigure } from "@/components/PortfolioFigure";
 
 export const metadata: Metadata = {
   title: "Sobre",
@@ -19,7 +19,7 @@ const beliefs = [
 
 export default function SobrePage() {
   return (
-    <div className="border-b border-line">
+    <div>
       <section className="border-b border-line py-20 md:py-28">
         <div className="mx-auto max-w-6xl px-5 md:px-8">
           <Reveal>
@@ -37,7 +37,7 @@ export default function SobrePage() {
       </section>
 
       <section className="py-20 md:py-28">
-        <div className="mx-auto grid max-w-6xl gap-14 px-5 md:grid-cols-2 md:items-start md:gap-16 md:px-8">
+        <div className="mx-auto grid max-w-6xl gap-14 px-5 md:grid-cols-2 md:items-center md:gap-16 md:px-8">
           <Reveal>
             <h2 className="font-serif text-3xl tracking-tight text-ink md:text-4xl">
               O que nos guia
@@ -69,13 +69,19 @@ export default function SobrePage() {
               <ArrowRight size={18} weight="bold" aria-hidden />
             </Link>
           </Reveal>
-          <Reveal delayMs={100}>
-            <PortfolioFigure
-              seed="up-sobre-team"
-              alt="Área verde com projeto paisagístico executado — Universo Paisagismo"
-              className="aspect-[4/5] rounded-xl border border-line md:sticky md:top-28"
-              sizes="(max-width: 768px) 100vw, 45vw"
-            />
+
+          <Reveal delayMs={100} className="flex justify-center">
+            <div className="relative w-full max-w-[380px] overflow-hidden rounded-2xl shadow-[0_16px_50px_rgba(0,0,0,0.12)]">
+              <Image
+                src="/social/joabe06.jpeg"
+                alt="Joabe — Universo Paisagismo"
+                width={720}
+                height={1280}
+                className="h-auto w-full object-cover transition-transform duration-700 ease-out hover:scale-[1.02]"
+                priority
+                sizes="(max-width: 768px) 100vw, 45vw"
+              />
+            </div>
           </Reveal>
         </div>
       </section>

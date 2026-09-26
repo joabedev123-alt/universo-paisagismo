@@ -5,9 +5,11 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
   }
   body {
-    @apply bg-canvas text-ink antialiased;
+    @apply bg-canvas text-ink antialiased overflow-x-hidden;
+    -webkit-tap-highlight-color: transparent;
   }
   ::selection {
     @apply bg-accent-soft text-ink;
