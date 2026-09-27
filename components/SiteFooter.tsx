@@ -1,8 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
-import { EnvelopeSimple, InstagramLogo, MapPin, Phone } from "@phosphor-icons/react/dist/ssr";
 
-const nav = [
+const navLinks = [
+  { href: "/", label: "Início" },
   { href: "/sobre", label: "Sobre" },
   { href: "/portfolio", label: "Portfólio" },
   { href: "/planos", label: "Planos" },
@@ -11,42 +11,48 @@ const nav = [
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-line bg-white">
-      <div className="mx-auto max-w-6xl px-5 py-16 md:px-8">
-        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4 lg:gap-8">
-          <div>
-            <div className="flex items-center gap-4">
-              <div className="relative h-20 w-20 md:h-24 md:w-24 flex-shrink-0 animate-spin-horizontal">
+    <footer className="border-t border-[#1F3327] bg-[#0D1F16] text-[#FAF9F5]">
+      <div className="mx-auto max-w-6xl px-5 py-16 sm:py-20 md:px-8">
+        {/* Grid Principal com 4 Colunas */}
+        <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-12 lg:gap-10">
+          {/* 1. UNIVERSO PAISAGISMO (Logo + Frase institucional) - 4 colunas */}
+          <div className="lg:col-span-4">
+            <Link href="/" className="inline-flex items-center gap-3.5 group">
+              <div className="relative h-14 w-14 sm:h-16 sm:w-16 flex-shrink-0">
                 <Image
-                  src="/logo/logo verde dourado sem fundo.png"
+                  src="/logo/logo verde verde sem fundo.png"
                   alt="Logo Universo Paisagismo"
                   fill
-                  sizes="96px"
-                  className="object-contain"
+                  sizes="64px"
+                  className="object-contain transition-transform duration-300 group-hover:scale-105"
                 />
               </div>
-              <div className="flex flex-col leading-none">
-                <p className="font-serif text-2xl tracking-tight text-ink md:text-3xl">Universo</p>
-                <p className="text-[11px] font-medium uppercase tracking-[0.24em] text-muted mt-0.5">
+              <div className="flex flex-col leading-tight">
+                <span className="font-serif text-2xl tracking-tight text-[#FAF9F5]">
+                  Universo
+                </span>
+                <span className="text-[11px] font-mono uppercase tracking-[0.24em] text-[#C49A63]">
                   Paisagismo
-                </p>
+                </span>
               </div>
-            </div>
-            <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted">
-              Transformamos espaços em ambientes memoráveis. Mais de duzentos jardins em
-              Belo Horizonte e região metropolitana.
+            </Link>
+
+            <p className="mt-5 text-sm leading-relaxed text-[#D9C5A5]/80 font-light max-w-sm">
+              Paisagismo, projetos 3D, execução e cuidado com jardins em Belo Horizonte e região.
             </p>
           </div>
-          <div>
-            <p className="text-xs font-medium uppercase tracking-[0.12em] text-muted">
+
+          {/* 2. NAVEGAÇÃO - 2 colunas */}
+          <div className="lg:col-span-2 lg:pl-2">
+            <p className="font-mono text-xs uppercase tracking-[0.2em] text-[#C49A63] font-semibold">
               Navegação
             </p>
-            <ul className="mt-4 space-y-2">
-              {nav.map((item) => (
+            <ul className="mt-4 space-y-2.5">
+              {navLinks.map((item) => (
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="text-sm text-ink/80 transition-colors hover:text-ink"
+                    className="text-sm text-[#D9C5A5]/85 transition-colors duration-200 hover:text-[#FAF9F5] hover:underline hover:decoration-[#C97832] underline-offset-4"
                   >
                     {item.label}
                   </Link>
@@ -54,55 +60,84 @@ export function SiteFooter() {
               ))}
             </ul>
           </div>
-          <div>
-            <p className="text-xs font-medium uppercase tracking-[0.12em] text-muted">
+
+          {/* 3. CONTATO - 3 colunas */}
+          <div className="lg:col-span-3">
+            <p className="font-mono text-xs uppercase tracking-[0.2em] text-[#C49A63] font-semibold">
               Contato
             </p>
-            <ul className="mt-4 space-y-3 text-sm text-ink/80">
-              <li className="flex items-start gap-2">
-                <Phone className="mt-0.5 shrink-0" size={18} weight="bold" />
-                <a href="tel:+5531993915033" className="hover:text-ink">
-                  (31) 99391-5033
-                </a>
-              </li>
-              <li className="flex items-start gap-2">
-                <EnvelopeSimple className="mt-0.5 shrink-0" size={18} weight="bold" />
+            <ul className="mt-4 space-y-3 text-sm text-[#D9C5A5]/85">
+              <li>
                 <a
-                  href="mailto:universopaisagismos@gmail.com"
-                  className="break-all hover:text-ink"
-                >
-                  universopaisagismos@gmail.com
-                </a>
-              </li>
-              <li className="flex items-start gap-2">
-                <InstagramLogo className="mt-0.5 shrink-0" size={18} weight="bold" />
-                <a
-                  href="https://www.instagram.com/universo_paisagismo"
+                  href="https://wa.me/5531993915033"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-ink"
+                  className="inline-flex items-center gap-2.5 transition-colors hover:text-[#FAF9F5]"
                 >
-                  @universo_paisagismo
+                  <i className="bi bi-whatsapp text-[#25D366] text-base" aria-hidden="true" />
+                  <span>(31) 99391-5033</span>
                 </a>
               </li>
-              <li className="flex items-start gap-2">
-                <MapPin className="mt-0.5 shrink-0" size={18} weight="bold" />
-                <span>Belo Horizonte e região metropolitana</span>
+              <li>
+                <a
+                  href="mailto:universopaisagismos@gmail.com"
+                  className="inline-flex items-center gap-2.5 break-all transition-colors hover:text-[#FAF9F5]"
+                >
+                  <i className="bi bi-envelope text-[#C49A63] text-base" aria-hidden="true" />
+                  <span>universopaisagismos@gmail.com</span>
+                </a>
+              </li>
+              <li className="flex items-start gap-2.5">
+                <i className="bi bi-geo-alt text-[#C49A63] text-base mt-0.5 shrink-0" aria-hidden="true" />
+                <span>Belo Horizonte e Região Metropolitana</span>
               </li>
             </ul>
           </div>
-          <div className="flex flex-col justify-end lg:items-end">
-            <Link
-              href="/contato"
-              className="inline-flex w-full items-center justify-center rounded-md bg-brand px-5 py-3 text-sm text-white transition-transform hover:bg-brand-hover active:scale-[0.98] lg:w-auto"
-            >
-              Pedir orçamento
+
+          {/* 4. REDES SOCIAIS & ATENDIMENTO - 3 colunas */}
+          <div className="lg:col-span-3">
+            <p className="font-mono text-xs uppercase tracking-[0.2em] text-[#C49A63] font-semibold">
+              Redes Sociais
+            </p>
+            <p className="mt-3 text-xs text-[#D9C5A5]/70 font-light">
+              Acompanhe nossas obras em tempo real e transformações semanais.
+            </p>
+
+            <div className="mt-4 flex items-center gap-3">
+              <a
+                href="https://www.instagram.com/universo_paisagismo"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram da Universo Paisagismo"
+                className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#172D21] border border-[#C49A63]/30 text-[#FAF9F5] shadow-sm transition-all duration-300 hover:bg-[#B9683A] hover:border-[#B9683A] hover:-translate-y-0.5"
+              >
+                <i className="bi bi-instagram text-base" />
+              </a>
+              <a
+                href="https://wa.me/5531993915033"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="WhatsApp da Universo Paisagismo"
+                className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#172D21] border border-[#C49A63]/30 text-[#FAF9F5] shadow-sm transition-all duration-300 hover:bg-[#25D366] hover:border-[#25D366] hover:-translate-y-0.5"
+              >
+                <i className="bi bi-whatsapp text-base" />
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* Linha Divisória e Rodapé Inferior */}
+        <div className="mt-14 border-t border-[#1F3327] pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#8A9B7A] font-light">
+          <p>© 2026 Universo Paisagismo. Todos os direitos reservados.</p>
+          <div className="flex items-center gap-6">
+            <Link href="/sobre" className="transition-colors hover:text-[#FAF9F5]">
+              Privacidade
+            </Link>
+            <Link href="/sobre" className="transition-colors hover:text-[#FAF9F5]">
+              Termos de Uso
             </Link>
           </div>
         </div>
-        <p className="mt-14 border-t border-line pt-8 text-center text-xs text-muted">
-          © {new Date().getFullYear()} Universo Paisagismo. Todos os direitos reservados.
-        </p>
       </div>
     </footer>
   );

@@ -7,6 +7,7 @@ type PortfolioFigureProps = {
   className?: string;
   priority?: boolean;
   sizes?: string;
+  fit?: "cover" | "contain";
 };
 
 export function PortfolioFigure({
@@ -16,6 +17,7 @@ export function PortfolioFigure({
   className = "",
   priority,
   sizes = "(max-width: 768px) 100vw, 50vw",
+  fit = "cover",
 }: PortfolioFigureProps) {
   const src =
     imageSrc ||
@@ -24,13 +26,13 @@ export function PortfolioFigure({
       : "/portfolio/01.jpeg");
 
   return (
-    <figure className={`relative overflow-hidden bg-line/40 ${className}`}>
+    <figure className={`relative overflow-hidden bg-[#FAF9F5] flex items-center justify-center ${className}`}>
       <Image
         src={src}
         alt={alt}
         width={1600}
         height={1200}
-        className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+        className={`h-full w-full ${fit === "contain" ? "object-contain p-1" : "object-cover"} transition-transform duration-700 ease-out group-hover:scale-[1.02]`}
         sizes={sizes}
         priority={priority}
       />

@@ -1,38 +1,36 @@
 import Link from "next/link";
 import Image from "next/image";
-import {
-  ArrowRight,
-  Cube,
-  Leaf,
-  MapPin,
-  Plant,
-  Sparkle,
-} from "@phosphor-icons/react/dist/ssr";
 import { HeroLandscape3D } from "@/components/HeroLandscape3D";
 import { Reveal } from "@/components/Reveal";
 import { PortfolioFigure } from "@/components/PortfolioFigure";
+import { StatsSection } from "@/components/StatsSection";
+import { Project3DComparison } from "@/components/Project3DComparison";
+import { RecentProjectsSection } from "@/components/RecentProjectsSection";
+import { TestimonialsSection } from "@/components/TestimonialsSection";
+import { PlansCTASection } from "@/components/PlansCTASection";
+import { FinalCTASection } from "@/components/FinalCTASection";
 import { portfolioItems } from "@/lib/portfolio";
 
 const pillars = [
   {
     title: "Atendimento personalizado",
     body: "Cada projeto nasce do seu ritmo, da arquitetura da casa e do uso do espaço.",
-    icon: Sparkle,
+    iconClass: "bi bi-sparkles",
   },
   {
     title: "Materiais e plantas selecionados",
     body: "Espécies adequadas ao clima de BH, solo e manutenção que você consegue sustentar.",
-    icon: Leaf,
+    iconClass: "bi bi-flower1",
   },
   {
     title: "Equipe especializada",
     body: "Paisagismo e jardinagem com experiência em obras residenciais e comerciais.",
-    icon: Plant,
+    iconClass: "bi bi-award",
   },
   {
     title: "Do projeto à manutenção",
     body: "Planejamento, execução e suporte para o jardim evoluir bem nos primeiros meses.",
-    icon: MapPin,
+    iconClass: "bi bi-shield-check",
   },
 ];
 
@@ -41,256 +39,246 @@ export default function HomePage() {
 
   return (
     <>
+      {/* 1. HERO REFORMULADO (Texto ampliado em +2cm) */}
       <HeroLandscape3D>
-        <Reveal className="flex flex-col items-center text-center mx-auto max-w-2xl">
-          <p className="font-mono text-sm font-semibold uppercase tracking-[0.24em] text-brand sm:text-base md:text-lg text-center">
-            Belo Horizonte e região
-          </p>
-          <h1 className="mt-4 font-serif text-3xl sm:text-5xl md:text-[3.6rem] lg:text-[4.1rem] leading-[1.08] md:leading-[1.04] tracking-tight text-ink text-center">
-            Transforme seu jardim
-            <span className="block">em ambiente de destaque</span>
+        <Reveal className="flex flex-col items-center text-center lg:items-start lg:text-left mx-auto lg:mx-0 max-w-2xl xl:max-w-3xl">
+          {/* Eyebrow com linha decorativa ampliada */}
+          <div className="inline-flex items-center gap-2.5">
+            <span className="h-px w-7 bg-[#C97832]" aria-hidden="true" />
+            <p className="font-mono text-xs font-semibold uppercase tracking-[0.24em] text-[#2F6B4F] sm:text-sm md:text-base">
+              Belo Horizonte e região
+            </p>
+          </div>
+
+          {/* Headline com forte presença visual ampliada em +2cm */}
+          <h1 className="mt-3 font-serif text-3xl sm:text-5xl md:text-[3.4rem] lg:text-[3.9rem] xl:text-[4.35rem] leading-[1.06] md:leading-[1.03] tracking-tight text-[#173F2A]">
+            Do projeto ao jardim.
+            <span className="block mt-1">
+              Veja antes. Viva <span className="text-[#C97832] italic font-normal">depois</span>.
+            </span>
           </h1>
-          <p className="mt-6 max-w-[50ch] text-lg sm:text-xl leading-relaxed text-muted text-center mx-auto">
-            Projetos sob medida, execução cuidadosa e manutenção. Visualização em 3D para
-            decidir com calma antes da primeira pá no terreno.
+
+          {/* Descrição com tamanho ampliado (+2cm) */}
+          <p className="mt-3.5 sm:mt-4 max-w-[50ch] text-base sm:text-lg md:text-xl xl:text-[1.35rem] leading-relaxed text-[#526B45] text-center lg:text-left mx-auto lg:mx-0">
+            Paisagismo personalizado, visualização 3D e execução profissional para transformar espaços em ambientes únicos.
           </p>
-          <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center justify-center w-full">
+
+          {/* CTAs Profissionais e Ampliados */}
+          <div className="mt-5 sm:mt-6 flex flex-col gap-3.5 sm:flex-row sm:items-center justify-center lg:justify-start w-full">
+            {/* CTA Principal */}
             <Link
               href="/contato"
-              className="inline-flex items-center justify-center rounded-md bg-brand px-7 py-3.5 text-base font-medium text-white transition-transform hover:bg-brand-hover active:scale-[0.98] shadow-sm hover:shadow-md"
+              className="inline-flex items-center justify-center gap-2.5 rounded-lg bg-[#2F6B4F] px-7 py-3.5 sm:px-8 sm:py-4 text-base sm:text-lg font-medium text-white shadow-[0_4px_16px_rgba(47,107,79,0.20)] transition-all duration-300 hover:bg-[#C97832] hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(201,120,50,0.30)] active:scale-[0.98]"
             >
-              Pedir orçamento
+              <span>Solicitar orçamento</span>
+              <i className="bi bi-arrow-up-right text-sm sm:text-base" aria-hidden="true" />
             </Link>
+
+            {/* CTA Secundário */}
             <Link
               href="/portfolio"
-              className="inline-flex items-center justify-center gap-2 text-base font-medium text-ink underline-offset-4 hover:underline"
+              className="group inline-flex items-center justify-center gap-2.5 rounded-lg border border-[#DDE5DC] bg-transparent px-6 py-3.5 sm:px-7 sm:py-4 text-base sm:text-lg font-medium text-[#173F2A] transition-all duration-300 hover:border-[#C97832] hover:text-[#C97832] active:scale-[0.98]"
             >
-              Ver portfólio
-              <ArrowRight size={20} weight="bold" aria-hidden />
+              <i className="bi bi-images text-sm sm:text-base transition-transform duration-300 group-hover:scale-110" aria-hidden="true" />
+              <span>Ver projetos</span>
             </Link>
           </div>
         </Reveal>
       </HeroLandscape3D>
-      <div className="border-t border-line bg-white">
-        <div className="mx-auto grid max-w-6xl grid-cols-3 divide-x divide-line px-5 py-10 md:px-8">
-          <div className="px-2 text-center md:px-6">
-            <p className="font-mono text-2xl tracking-tight text-ink md:text-3xl">200+</p>
-            <p className="mt-1 text-xs text-muted md:text-sm">Jardins realizados</p>
-          </div>
-          <div className="px-2 text-center md:px-6">
-            <p className="font-mono text-2xl tracking-tight text-ink md:text-3xl">BH</p>
-            <p className="mt-1 text-xs text-muted md:text-sm">e região metropolitana</p>
-          </div>
-          <div className="px-2 text-center md:px-6">
-            <p className="font-mono text-2xl tracking-tight text-ink md:text-3xl">3D</p>
-            <p className="mt-1 text-xs text-muted md:text-sm">Estudo visual completo</p>
-          </div>
-        </div>
-      </div>
 
-      <section className="border-b border-line py-24 md:py-32">
-        <div className="mx-auto max-w-6xl px-5 md:px-8">
-          <div className="grid gap-14 lg:grid-cols-12 lg:gap-10">
-            <Reveal className="lg:col-span-5">
-              <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted">Sobre</p>
-              <h2 className="mt-4 font-serif text-4xl tracking-tight text-ink md:text-5xl">
-                Menos fórmula pronta. Mais terreno real.
-              </h2>
-              <p className="mt-6 max-w-[52ch] text-base leading-relaxed text-muted">
-                Somos especialistas em projetos paisagísticos, revitalização, manutenção e
-                criação de jardins residenciais e comerciais. Nossa missão é traduzir solo,
-                luz e uso em um desenho coerente.
-              </p>
-              <Link
-                href="/sobre"
-                className="mt-8 inline-flex items-center gap-2 text-sm font-medium text-ink"
-              >
-                Conhecer o estúdio
-                <ArrowRight size={18} weight="bold" aria-hidden />
-              </Link>
-            </Reveal>
-            <Reveal delayMs={100} className="lg:col-span-7 flex justify-center">
-              <div className="relative aspect-square w-full max-w-[460px] overflow-hidden rounded-2xl shadow-[0_16px_50px_rgba(61,111,86,0.14)] border border-line/60 bg-stone-900">
-                <Image
-                  src="/logo/logo verde dourado.jpeg"
-                  alt="Universo Paisagismo"
-                  width={1024}
-                  height={1024}
-                  className="h-full w-full object-cover transition-transform duration-700 ease-out hover:scale-[1.02]"
-                  sizes="(max-width: 1024px) 100vw, 55vw"
-                />
-              </div>
-            </Reveal>
-          </div>
+      {/* 2. SEÇÃO — APRESENTAÇÃO DA UNIVERSO (Editorial / Fundo verde-sálvia claro) */}
+      <section className="relative overflow-hidden border-b border-[#E2E8DF] bg-[#F1F4EF] py-24 sm:py-28 lg:py-36">
+        {/* Marca d'água sutil da marca no background para sensação arquitetônica premium */}
+        <div
+          className="pointer-events-none absolute -right-12 -bottom-16 w-[380px] sm:w-[500px] lg:w-[620px] select-none opacity-[0.045] mix-blend-multiply transition-opacity duration-1000"
+          aria-hidden="true"
+        >
+          <Image
+            src="/logo/logo verde verde sem fundo.png"
+            alt=""
+            width={800}
+            height={800}
+            className="h-auto w-full object-contain"
+          />
         </div>
-      </section>
 
-      <section className="border-b border-line bg-white py-24 md:py-32">
-        <div className="mx-auto max-w-6xl px-5 md:px-8">
-          <Reveal className="max-w-2xl">
-            <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted">
-              Nosso trabalho
-            </p>
-            <h2 className="mt-4 font-serif text-4xl tracking-tight text-ink md:text-5xl">
-              Clareza em cada etapa
-            </h2>
-          </Reveal>
-          <div className="mt-14 grid gap-6 md:grid-cols-2">
-            {pillars.map((item, i) => {
-              const Icon = item.icon;
-              return (
-                <Reveal key={item.title} delayMs={i * 60}>
-                  <div className="h-full border border-line bg-canvas p-8 transition-shadow duration-200 hover:shadow-[0_2px_8px_rgba(0,0,0,0.04)] md:p-10">
-                    <Icon className="text-ink" size={28} weight="bold" aria-hidden />
-                    <h3 className="mt-6 text-lg font-medium tracking-tight text-ink">
-                      {item.title}
-                    </h3>
-                    <p className="mt-3 max-w-[52ch] text-sm leading-relaxed text-muted">
-                      {item.body}
-                    </p>
-                  </div>
-                </Reveal>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      <section className="border-b border-line py-24 md:py-32">
-        <div className="mx-auto max-w-6xl px-5 md:px-8">
-          <div className="grid gap-12 lg:grid-cols-12 lg:items-center">
-            <Reveal className="lg:col-span-6 lg:order-2">
-              <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted">
-                Visualização
-              </p>
-              <h2 className="mt-4 font-serif text-4xl tracking-tight text-ink md:text-5xl">
-                Veja o jardim antes da obra
-              </h2>
-              <p className="mt-6 max-w-[52ch] text-base leading-relaxed text-muted">
-                Entregamos planta humanizada em 3D: escala, materiais, vegetação e iluminação
-                com leitura simples para quem não é do ramo técnico.
-              </p>
-              <ul className="mt-8 space-y-4 text-sm text-ink/85">
-                <li className="flex gap-3">
-                  <Cube className="shrink-0 text-accent" size={22} weight="bold" />
-                  <span>
-                    <strong className="font-medium text-ink">Cena realista</strong> — luz e
-                    textura próximas do resultado final.
-                  </span>
-                </li>
-                <li className="flex gap-3">
-                  <Cube className="shrink-0 text-accent" size={22} weight="bold" />
-                  <span>
-                    <strong className="font-medium text-ink">Detalhamento</strong> — pedras,
-                    mobiliário externo, pontos de irrigação.
-                  </span>
-                </li>
-                <li className="flex gap-3">
-                  <Cube className="shrink-0 text-accent" size={22} weight="bold" />
-                  <span>
-                    <strong className="font-medium text-ink">Integração</strong> — fachada,
-                    sombra e circulação caminham juntos.
-                  </span>
-                </li>
-              </ul>
-              <Link
-                href="/contato"
-                className="mt-10 inline-flex items-center justify-center rounded-md border border-line bg-white px-5 py-3 text-sm font-medium text-ink transition-transform active:scale-[0.98]"
-              >
-                Solicitar estudo 3D
-              </Link>
-            </Reveal>
-            <Reveal delayMs={80} className="lg:col-span-6 lg:order-1">
-              <div className="relative overflow-hidden rounded-2xl border border-line bg-white/70 p-2 shadow-[0_12px_40px_rgba(61,111,86,0.12)]">
-                <div className="relative aspect-[16/10] sm:aspect-[4/3] w-full overflow-hidden rounded-xl bg-line/30">
-                  <Image
-                    src="/hero01.png"
-                    alt="Renderização de projeto paisagístico em perspectiva — Universo Paisagismo"
-                    width={1711}
-                    height={919}
-                    className="h-full w-full object-cover transition-transform duration-700 ease-out hover:scale-[1.02]"
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                  />
-                </div>
-              </div>
-            </Reveal>
-          </div>
-        </div>
-      </section>
-
-      <section className="border-b border-line bg-white py-24 md:py-32">
-        <div className="mx-auto max-w-6xl px-5 md:px-8">
-          <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
-            <Reveal className="max-w-xl">
-              <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted">
-                Portfólio
-              </p>
-              <h2 className="mt-4 font-serif text-4xl tracking-tight text-ink md:text-5xl">
-                Obras recentes
-              </h2>
-              <p className="mt-4 text-base leading-relaxed text-muted">
-                Cada entrega reflete o jeito de morar ou trabalhar de quem nos contratou.
-              </p>
-            </Reveal>
-            <Reveal>
-              <Link
-                href="/portfolio"
-                className="inline-flex items-center gap-2 text-sm font-medium text-ink"
-              >
-                Portfólio completo
-                <ArrowRight size={18} weight="bold" aria-hidden />
-              </Link>
-            </Reveal>
-          </div>
-          <div className="mt-14 grid gap-6 md:grid-cols-3">
-            {preview.map((item, i) => (
-              <Reveal key={item.slug} delayMs={i * 70}>
-                <article className="group flex h-full flex-col border border-line bg-canvas overflow-hidden rounded-xl transition-all duration-300 hover:shadow-[0_10px_30px_rgba(61,111,86,0.1)]">
-                  <PortfolioFigure
-                    imageSrc={item.imageSrc}
-                    alt={`${item.title} — Universo Paisagismo`}
-                    className="aspect-[4/3]"
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                  />
-                  <div className="flex flex-1 flex-col p-6">
-                    <span className="inline-flex w-fit rounded-full bg-accent-soft px-2.5 py-0.5 font-mono text-[10px] uppercase tracking-wider text-accent font-medium">
-                      {item.tag}
-                    </span>
-                    <h3 className="mt-4 font-serif text-xl tracking-tight text-ink">{item.title}</h3>
-                    <p className="mt-2 flex-1 text-sm leading-relaxed text-muted">
-                      {item.description}
-                    </p>
-                  </div>
-                </article>
+        <div className="relative mx-auto max-w-6xl px-5 sm:px-6 md:px-8">
+          <div className="grid gap-10 lg:grid-cols-12 lg:gap-16 items-start">
+            {/* Lado esquerdo: Identificação + Título com detalhe terracota */}
+            <div className="lg:col-span-6">
+              <Reveal delayMs={0}>
+                <p className="font-mono text-xs uppercase tracking-[0.25em] text-[#526B45] font-semibold">
+                  SOBRE A UNIVERSO
+                </p>
               </Reveal>
-            ))}
+
+              <Reveal delayMs={120}>
+                <div className="mt-4 flex items-stretch gap-4 sm:gap-5">
+                  <div
+                    className="w-[3px] rounded-full bg-[#C97832] shrink-0 self-stretch my-1"
+                    aria-hidden="true"
+                  />
+                  <h2 className="font-serif text-3xl sm:text-4xl lg:text-[2.75rem] font-normal leading-[1.18] tracking-tight text-[#0D1F16]">
+                    Paisagismo pensado
+                    <br className="hidden sm:inline" /> para ser vivido.
+                  </h2>
+                </div>
+              </Reveal>
+            </div>
+
+            {/* Lado direito: Parágrafo institucional + Link editorial */}
+            <div className="lg:col-span-6 lg:pt-7">
+              <Reveal delayMs={220}>
+                <p className="text-base sm:text-lg leading-relaxed text-[#445244] font-light max-w-[54ch]">
+                  Na Universo Paisagismo, cada projeto nasce da leitura do terreno, da arquitetura e da rotina de quem vai utilizar aquele espaço. Unimos planejamento, conhecimento técnico e execução para criar jardins bonitos, funcionais e possíveis de manter no dia a dia.
+                </p>
+              </Reveal>
+
+              <Reveal delayMs={340}>
+                <div className="mt-8 sm:mt-10">
+                  <Link
+                    href="/sobre"
+                    className="group relative inline-flex items-center gap-2 pb-1 text-base sm:text-lg font-medium text-[#0D1F16] transition-colors duration-300 hover:text-[#C97832]"
+                  >
+                    <span>Conheça a Universo</span>
+                    <i
+                      className="bi bi-arrow-right text-base transition-transform duration-300 ease-out group-hover:translate-x-1.5 text-[#C97832]"
+                      aria-hidden="true"
+                    />
+                    {/* Linha terracota suave animada no hover */}
+                    <span
+                      className="absolute bottom-0 left-0 h-[2px] w-0 bg-[#C97832] transition-all duration-300 ease-out group-hover:w-full"
+                      aria-hidden="true"
+                    />
+                  </Link>
+                </div>
+              </Reveal>
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="py-24 md:py-32">
+      {/* 3. SEÇÃO — NOSSO PROCESSO / CLAREZA EM CADA ETAPA */}
+      <section className="relative border-b border-[#E2E8DF] bg-[#FAF9F5] py-24 md:py-32">
         <div className="mx-auto max-w-6xl px-5 md:px-8">
-          <Reveal className="max-w-2xl">
-            <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted">Planos</p>
-            <h2 className="mt-4 font-serif text-4xl tracking-tight text-ink md:text-5xl">
-              Escolha o ritmo do projeto
-            </h2>
-            <p className="mt-4 text-base leading-relaxed text-muted">
-              Três entradas com escopo claro. Ajustamos combinações conforme sua área e
-              prazo.
-            </p>
-          </Reveal>
-          <div className="mt-12">
-            <Link
-              href="/planos"
-              className="inline-flex items-center gap-2 rounded-md bg-brand px-6 py-3 text-sm font-medium text-white transition-transform hover:bg-brand-hover active:scale-[0.98]"
-            >
-              Comparar planos
-              <ArrowRight size={18} weight="bold" aria-hidden />
-            </Link>
+          {/* Topo: Eyebrow + Título + Parágrafo */}
+          <div className="max-w-3xl">
+            <Reveal delayMs={0}>
+              <p className="font-mono text-xs uppercase tracking-[0.25em] text-[#526B45] font-semibold">
+                NOSSO TRABALHO
+              </p>
+            </Reveal>
+
+            <Reveal delayMs={100}>
+              <h2 className="mt-3 font-serif text-3xl sm:text-4xl lg:text-5xl tracking-tight text-[#0D1F16]">
+                Clareza em cada etapa
+              </h2>
+            </Reveal>
+
+            <Reveal delayMs={180}>
+              <p className="mt-4 text-base sm:text-lg leading-relaxed text-[#4A554A] font-light max-w-[62ch]">
+                Do primeiro contato à entrega do jardim, cada etapa é planejada para que você saiba exatamente o que será feito, como será executado e qual resultado esperar.
+              </p>
+            </Reveal>
+          </div>
+
+          {/* Composição: 45% Mídia (Vídeo Processo) / 55% Conteúdo Editorial */}
+          <div className="mt-12 lg:mt-16 grid gap-10 lg:grid-cols-12 lg:gap-14 items-center">
+            {/* Coluna Esquerda (~45%): Vídeo Vertical de Processo Real */}
+            <div className="lg:col-span-5 flex justify-center order-1">
+              <Reveal delayMs={150} className="w-full max-w-[420px]">
+                <div className="group relative aspect-[4/5] w-full overflow-hidden rounded-2xl border border-[#DDE5DC] bg-[#0D1F16] shadow-[0_20px_45px_rgba(13,31,22,0.12)]">
+                  {/* Vídeo Vertical Real em Autoplay Loop Muted */}
+                  <video
+                    src="/video rapido 01.mp4"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.02]"
+                  />
+
+                  {/* Gradientes sutis para contraste refinado dos textos sobrepostos */}
+                  <div
+                    className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#0D1F16]/85 via-transparent to-[#0D1F16]/60"
+                    aria-hidden="true"
+                  />
+
+                  {/* Overlay Superior: NOSSO PROCESSO / Obras reais */}
+                  <div className="absolute top-4 left-4 right-4 z-10 flex flex-col items-start gap-1">
+                    <div className="inline-flex items-center gap-2 rounded-full bg-[#0D1F16]/75 backdrop-blur-md px-3 py-1 border border-white/15">
+                      <span className="h-1.5 w-1.5 rounded-full bg-[#C97832] animate-pulse" aria-hidden="true" />
+                      <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-white font-medium">
+                        NOSSO PROCESSO
+                      </span>
+                    </div>
+                    <span className="text-[11px] text-white/80 font-light tracking-wide pl-1 drop-shadow-sm">
+                      Obras reais • Universo Paisagismo
+                    </span>
+                  </div>
+
+                  {/* Overlay Inferior: +10 anos de experiência */}
+                  <div className="absolute bottom-4 left-4 z-10">
+                    <div className="inline-flex items-center gap-2 rounded-lg bg-[#0D1F16]/80 backdrop-blur-md px-3.5 py-1.5 border border-white/15 text-white/90 text-xs font-medium shadow-sm">
+                      <i className="bi bi-shield-check text-[#C49A63]" aria-hidden="true" />
+                      <span>+10 anos de experiência</span>
+                    </div>
+                  </div>
+                </div>
+              </Reveal>
+            </div>
+
+            {/* Coluna Direita (~55%): Quatro diferenciais em formato editorial numerados 01 - 04 */}
+            <div className="lg:col-span-7 divide-y divide-[#E2E8DF] border-y border-[#E2E8DF] order-2">
+              {pillars.map((item, i) => {
+                const numberFormatted = String(i + 1).padStart(2, "0");
+                return (
+                  <Reveal key={item.title} delayMs={100 + i * 90}>
+                    <div className="group relative py-6 sm:py-7 transition-all duration-300">
+                      {/* Linha terracota sutil lateral no hover */}
+                      <div
+                        className="absolute left-0 top-0 bottom-0 w-[3px] bg-[#C97832] scale-y-0 transition-transform duration-300 origin-center group-hover:scale-y-100"
+                        aria-hidden="true"
+                      />
+
+                      <div className="pl-0 sm:pl-3 transition-transform duration-300 ease-out group-hover:translate-x-1.5">
+                        <div className="flex items-baseline gap-3">
+                          <span className="font-mono text-sm sm:text-base font-semibold text-[#C97832]">
+                            {numberFormatted}
+                          </span>
+                          <span className="text-[#8A9B7A] font-light text-xs">—</span>
+                          <h3 className="font-serif text-lg sm:text-xl font-medium tracking-tight text-[#0D1F16] transition-colors duration-300 group-hover:text-[#2F6B4F]">
+                            {item.title}
+                          </h3>
+                        </div>
+
+                        <p className="mt-2 text-sm sm:text-base leading-relaxed text-[#4A554A] font-light max-w-[56ch] pl-7 sm:pl-8">
+                          {item.body}
+                        </p>
+                      </div>
+                    </div>
+                  </Reveal>
+                );
+              })}
+            </div>
           </div>
         </div>
       </section>
+
+      {/* 4. SEÇÃO — VISUALIZAÇÃO 3D (Comparador 3D ↔ Real Interativo) */}
+      <Project3DComparison />
+
+      {/* 5. SEÇÃO — OBRAS RECENTES (Composição Editorial Assimétrica) */}
+      <RecentProjectsSection />
+
+      {/* 6. SEÇÃO — EXPERIÊNCIAS REAIS / PROVA SOCIAL */}
+      <TestimonialsSection />
+
+      {/* 7. SEÇÃO — FORMAS DE CONTRATAÇÃO */}
+      <PlansCTASection />
+
+      {/* 8. SEÇÃO — CTA FINAL CINEMATOGRÁFICO */}
+      <FinalCTASection />
     </>
   );
 }

@@ -162,14 +162,14 @@ export function ContactForm() {
             <button
               type="submit"
               disabled={state === "sending"}
-              className="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-md bg-brand py-3 text-sm font-medium text-white transition-transform hover:bg-brand-hover disabled:opacity-60 md:w-auto md:px-8 active:scale-[0.98]"
+              className="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-lg bg-olive py-3.5 text-sm font-medium text-white shadow-[0_8px_24px_rgba(13,31,22,0.16)] transition-all duration-300 hover:bg-forest hover:-translate-y-0.5 hover:shadow-[0_12px_28px_rgba(13,31,22,0.24)] disabled:opacity-60 md:w-auto md:px-8 active:scale-[0.98]"
             >
               {state === "sending" ? (
                 "Enviando…"
               ) : (
                 <>
-                  Enviar pedido
-                  <PaperPlaneTilt size={18} weight="bold" aria-hidden />
+                  <span>Enviar pedido</span>
+                  <i className="bi bi-arrow-up-right text-xs" aria-hidden="true" />
                 </>
               )}
             </button>

@@ -49,7 +49,13 @@ export default function RootLayout({
       lang="pt-BR"
       className={`${outfit.variable} ${instrument.variable} ${jetbrains.variable}`}
     >
-      <body className="font-sans">
+      <head>
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+        />
+      </head>
+      <body className="font-sans bg-warmwhite text-forest selection:bg-sand/40 selection:text-forest">
         <div className="grain" aria-hidden />
         <SiteHeader />
         <main className="pt-20 md:pt-24 min-h-[calc(100vh-80px)] overflow-x-hidden">{children}</main>
