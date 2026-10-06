@@ -148,7 +148,7 @@ export function HeroLandscape3D({ children, className = "" }: HeroLandscape3DPro
                 <video
                   ref={videoRef}
                   src="/hero/hero%2002.mp4"
-                  poster="/hero/03.png"
+                  poster="/posters/hero-02.jpg"
                   playsInline
                   autoPlay
                   loop

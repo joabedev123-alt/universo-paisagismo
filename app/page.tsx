@@ -192,6 +192,7 @@ export default function HomePage() {
                   {/* Vídeo Vertical Real em Autoplay Loop Muted */}
                   <LazyVideo
                     src="/video rapido 01.mp4"
+                    poster="/posters/video-rapido-01.jpg"
                     className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.02]"
                   />
 

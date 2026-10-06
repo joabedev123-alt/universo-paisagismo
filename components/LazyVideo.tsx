@@ -22,7 +22,7 @@ export function LazyVideo({ src, poster, className, style }: LazyVideoProps) {
       ([entry]) => {
         if (entry.isIntersecting) {
           setInView(true);
-          el.play().catch(() => {});
+          if (el.getAttribute("src")) el.play().catch(() => {});
         } else {
           el.pause();
         }
@@ -32,6 +32,12 @@ export function LazyVideo({ src, poster, className, style }: LazyVideoProps) {
     observer.observe(el);
     return () => observer.disconnect();
   }, []);
+
+  // Ao receber o src, garante o início da reprodução (alguns navegadores
+  // móveis ignoram o autoplay quando o src é atribuído depois da montagem)
+  useEffect(() => {
+    if (inView) ref.current?.play().catch(() => {});
+  }, [inView]);
 
   return (
     <video

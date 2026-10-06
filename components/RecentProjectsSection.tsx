@@ -18,7 +18,7 @@ export const recentProjectsData = {
     mediaType: "video" as const,
     // [VIDEO_PROJETO_PRINCIPAL]
     src: "/hero/hero 01.mp4",
-    poster: "/hero-paisagem.png",
+    poster: "/posters/hero-01.jpg",
     alt: "Vídeo do projeto principal de paisagismo — Universo Paisagismo",
     href: "/portfolio",
     objectPosition: "center center",

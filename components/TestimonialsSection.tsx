@@ -15,8 +15,7 @@ export const testimonialVideos = [
     client: "Transformação do Jardim",
     location: "Nova Lima, MG",
     src: "/depoimentos/WhatsApp Video 2026-09-27 at 00.16.35.mp4",
-    // Sem capa: o quadro exibe o primeiro frame do próprio vídeo
-    poster: "",
+    poster: "/posters/depoimento-01.jpg",
   },
   {
     id: "video-02",
@@ -24,8 +23,7 @@ export const testimonialVideos = [
     client: "Projeto Residencial",
     location: "Belo Horizonte, MG",
     src: "/depoimentos/WhatsApp Video 2026-09-27 at 00.15.48.mp4",
-    // Sem capa: o quadro exibe o primeiro frame do próprio vídeo
-    poster: "",
+    poster: "/posters/depoimento-02.jpg",
   },
 ];
 
@@ -135,8 +133,8 @@ export function TestimonialsSection() {
               <div className="group relative aspect-[4/5] w-full overflow-hidden rounded-2xl border border-[#DDE5DC] bg-[#0D1F16] shadow-[0_20px_50px_rgba(13,31,22,0.12)] transition-all duration-500 hover:border-[#C49A63]/50">
                 <video
                   ref={videoRef}
-                  src={currentVideo.poster ? currentVideo.src : `${currentVideo.src}#t=0.1`}
-                  poster={currentVideo.poster || undefined}
+                  src={currentVideo.src}
+                  poster={currentVideo.poster}
                   preload="metadata"
                   playsInline
                   controls={isPlaying}
@@ -183,11 +181,11 @@ export function TestimonialsSection() {
 
             {/* Alternador Minimalista entre Vídeos */}
             <Reveal delayMs={240} className="w-full max-w-[460px]">
-              <div className="mt-5 flex items-center gap-3">
+              <div className="mt-5 flex flex-wrap items-center gap-x-3 gap-y-2">
                 <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-[#8A9B7A] font-medium">
                   Depoimentos:
                 </span>
-                <div className="flex items-center gap-2">
+                <div className="flex flex-wrap items-center gap-2">
                   {testimonialVideos.map((vid, idx) => {
                     const isActive = idx === activeVideoIndex;
                     return (
