@@ -12,18 +12,20 @@ export const testimonialVideos = [
   {
     id: "video-01",
     label: "Depoimento 01",
-    client: "Projeto Residencial",
-    location: "Belo Horizonte, MG",
-    src: "/depoimentos/WhatsApp Video 2026-09-27 at 00.15.48.mp4",
-    poster: "/social/joabe 01.JPG",
+    client: "Transformação do Jardim",
+    location: "Nova Lima, MG",
+    src: "/depoimentos/WhatsApp Video 2026-09-27 at 00.16.35.mp4",
+    // Sem capa: o quadro exibe o primeiro frame do próprio vídeo
+    poster: "",
   },
   {
     id: "video-02",
     label: "Depoimento 02",
-    client: "Transformação do Jardim",
-    location: "Nova Lima, MG",
-    src: "/depoimentos/WhatsApp Video 2026-09-27 at 00.16.35.mp4",
-    poster: "/social/joabe 02.JPG",
+    client: "Projeto Residencial",
+    location: "Belo Horizonte, MG",
+    src: "/depoimentos/WhatsApp Video 2026-09-27 at 00.15.48.mp4",
+    // Sem capa: o quadro exibe o primeiro frame do próprio vídeo
+    poster: "",
   },
 ];
 
@@ -133,8 +135,9 @@ export function TestimonialsSection() {
               <div className="group relative aspect-[4/5] w-full overflow-hidden rounded-2xl border border-[#DDE5DC] bg-[#0D1F16] shadow-[0_20px_50px_rgba(13,31,22,0.12)] transition-all duration-500 hover:border-[#C49A63]/50">
                 <video
                   ref={videoRef}
-                  src={currentVideo.src}
-                  poster={currentVideo.poster}
+                  src={currentVideo.poster ? currentVideo.src : `${currentVideo.src}#t=0.1`}
+                  poster={currentVideo.poster || undefined}
+                  preload="metadata"
                   playsInline
                   controls={isPlaying}
                   onPlay={() => setIsPlaying(true)}
@@ -151,7 +154,7 @@ export function TestimonialsSection() {
                   >
                     {/* Badge superior */}
                     <div className="flex items-center justify-between">
-                      <span className="inline-flex items-center gap-1.5 rounded-full bg-[#0D1F16]/75 backdrop-blur-md px-3 py-1 border border-white/15 text-[10px] font-mono uppercase tracking-[0.2em] text-[#FAF9F5]">
+                      <span className="inline-flex items-center gap-1.5 rounded-full bg-[#0D1F16]/75 backdrop-blur-md px-3 py-1 border border-white/15 text-[11px] font-mono uppercase tracking-[0.2em] text-[#FAF9F5]">
                         <span className="h-1.5 w-1.5 rounded-full bg-[#C97832]" aria-hidden="true" />
                         DEPOIMENTO EM VÍDEO
                       </span>
@@ -192,7 +195,7 @@ export function TestimonialsSection() {
                         key={vid.id}
                         type="button"
                         onClick={() => handleSelectVideo(idx)}
-                        className={`group flex items-center gap-2 rounded-xl px-3.5 py-1.5 text-xs font-medium transition-all duration-300 ${
+                        className={`group flex items-center gap-2 whitespace-nowrap rounded-xl px-3.5 py-2 text-xs font-medium transition-all duration-300 ${
                           isActive
                             ? "bg-[#0D1F16] text-[#FAF9F5] shadow-sm"
                             : "bg-white/80 text-[#526B45] border border-[#DDE5DC] hover:border-[#C49A63]/50 hover:text-[#0D1F16]"

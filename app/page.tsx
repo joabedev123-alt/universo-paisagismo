@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { HeroLandscape3D } from "@/components/HeroLandscape3D";
 import { Reveal } from "@/components/Reveal";
+import { LazyVideo } from "@/components/LazyVideo";
 import { PortfolioFigure } from "@/components/PortfolioFigure";
 import { StatsSection } from "@/components/StatsSection";
 import { Project3DComparison } from "@/components/Project3DComparison";
@@ -189,12 +190,8 @@ export default function HomePage() {
               <Reveal delayMs={150} className="w-full max-w-[420px]">
                 <div className="group relative aspect-[4/5] w-full overflow-hidden rounded-2xl border border-[#DDE5DC] bg-[#0D1F16] shadow-[0_20px_45px_rgba(13,31,22,0.12)]">
                   {/* Vídeo Vertical Real em Autoplay Loop Muted */}
-                  <video
+                  <LazyVideo
                     src="/video rapido 01.mp4"
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
                     className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.02]"
                   />
 
@@ -208,7 +205,7 @@ export default function HomePage() {
                   <div className="absolute top-4 left-4 right-4 z-10 flex flex-col items-start gap-1">
                     <div className="inline-flex items-center gap-2 rounded-full bg-[#0D1F16]/75 backdrop-blur-md px-3 py-1 border border-white/15">
                       <span className="h-1.5 w-1.5 rounded-full bg-[#C97832] animate-pulse" aria-hidden="true" />
-                      <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-white font-medium">
+                      <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-white font-medium">
                         NOSSO PROCESSO
                       </span>
                     </div>

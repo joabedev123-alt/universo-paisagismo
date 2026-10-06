@@ -207,7 +207,6 @@ export function Project3DComparison() {
                       fill
                       sizes="(max-width: 1024px) 100vw, 50vw"
                       style={{ objectFit: "cover", objectPosition: "center center" }}
-                      priority
                       className="pointer-events-none"
                     />
                     {/* Label Direita: RESULTADO REAL */}
@@ -227,7 +226,6 @@ export function Project3DComparison() {
                       fill
                       sizes="(max-width: 1024px) 100vw, 50vw"
                       style={{ objectFit: "cover", objectPosition: "center center" }}
-                      priority
                       className="pointer-events-none"
                     />
                     {/* Label Esquerda: PROJETO 3D */}
@@ -249,7 +247,7 @@ export function Project3DComparison() {
                 </div>
 
                 {/* Dica de interação sutil */}
-                <div className="pointer-events-none absolute top-3.5 left-1/2 -translate-x-1/2 z-10 rounded-full bg-[#0D1F16]/75 backdrop-blur-md px-3 py-1 border border-white/10 text-[10px] font-mono uppercase tracking-[0.2em] text-[#D9C5A5]/80">
+                <div className="pointer-events-none absolute top-3.5 left-1/2 -translate-x-1/2 z-10 rounded-full bg-[#0D1F16]/75 backdrop-blur-md px-3 py-1 border border-white/10 text-[11px] font-mono uppercase tracking-[0.2em] text-[#D9C5A5]/80">
                   Arraste para comparar
                 </div>
               </div>

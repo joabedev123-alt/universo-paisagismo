@@ -32,45 +32,45 @@ export function ContactForm() {
         <Reveal className="md:col-span-5">
           <div className="space-y-8 border border-line bg-white p-8 md:p-10">
             <div>
-              <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-muted">
+              <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted">
                 Telefone
               </p>
               <a
                 href="tel:+5531993915033"
-                className="mt-2 flex items-center gap-2 text-sm font-medium text-ink hover:underline"
+                className="mt-1 flex min-h-10 items-center gap-2 text-sm font-medium text-ink hover:underline"
               >
                 <Phone size={20} weight="bold" aria-hidden />
                 (31) 99391-5033
               </a>
             </div>
             <div>
-              <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-muted">
+              <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted">
                 E-mail
               </p>
               <a
                 href="mailto:universopaisagismos@gmail.com"
-                className="mt-2 flex items-start gap-2 break-all text-sm font-medium text-ink hover:underline"
+                className="mt-1 flex min-h-10 items-center gap-2 break-all text-sm font-medium text-ink hover:underline"
               >
-                <EnvelopeSimple className="mt-0.5 shrink-0" size={20} weight="bold" />
+                <EnvelopeSimple className="shrink-0" size={20} weight="bold" />
                 universopaisagismos@gmail.com
               </a>
             </div>
             <div>
-              <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-muted">
+              <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted">
                 Instagram
               </p>
               <a
                 href="https://www.instagram.com/universo_paisagismo"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-2 flex items-center gap-2 text-sm font-medium text-ink hover:underline"
+                className="mt-1 flex min-h-10 items-center gap-2 text-sm font-medium text-ink hover:underline"
               >
                 <InstagramLogo size={20} weight="bold" aria-hidden />
                 @universo_paisagismo
               </a>
             </div>
             <div>
-              <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-muted">
+              <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted">
                 Área
               </p>
               <p className="mt-2 flex items-start gap-2 text-sm text-muted">

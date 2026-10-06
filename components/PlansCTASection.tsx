@@ -65,7 +65,7 @@ export function PlansCTASection() {
                 </p>
 
                 <div className="mt-6 border-t border-[#1F3327] pt-5">
-                  <p className="font-mono text-[10px] uppercase tracking-widest text-[#8A9B7A] mb-3">
+                  <p className="font-mono text-[11px] uppercase tracking-widest text-[#8A9B7A] mb-3">
                     O que está incluído:
                   </p>
                   <ul className="space-y-2.5 text-xs sm:text-sm text-[#FAF9F5]/90">
@@ -137,7 +137,7 @@ export function PlansCTASection() {
                 </p>
 
                 <div className="mt-6 border-t border-[#1F3829] pt-5">
-                  <p className="font-mono text-[10px] uppercase tracking-widest text-[#D9C5A5]/70 mb-3">
+                  <p className="font-mono text-[11px] uppercase tracking-widest text-[#D9C5A5]/70 mb-3">
                     O que está incluído:
                   </p>
                   <ul className="space-y-2.5 text-xs sm:text-sm text-[#FAF9F5]">
@@ -201,7 +201,7 @@ export function PlansCTASection() {
                 </p>
 
                 <div className="mt-6 border-t border-[#1F3327] pt-5">
-                  <p className="font-mono text-[10px] uppercase tracking-widest text-[#8A9B7A] mb-3">
+                  <p className="font-mono text-[11px] uppercase tracking-widest text-[#8A9B7A] mb-3">
                     O que está incluído:
                   </p>
                   <ul className="space-y-2.5 text-xs sm:text-sm text-[#FAF9F5]/90">

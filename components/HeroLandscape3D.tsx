@@ -139,7 +139,7 @@ export function HeroLandscape3D({ children, className = "" }: HeroLandscape3DPro
                 style={{ aspectRatio }}
               >
                 {/* Selo Editorial Discreto: PROJETO REAL • UNIVERSO PAISAGISMO */}
-                <div className="absolute top-3 left-3 z-20 flex items-center gap-1.5 rounded-full bg-[#0D1F16]/85 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-white/95 backdrop-blur-md border border-white/15 shadow-sm pointer-events-none">
+                <div className="absolute top-3 left-3 z-20 flex items-center gap-1.5 rounded-full bg-[#0D1F16]/85 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-white/95 backdrop-blur-md border border-white/15 shadow-sm pointer-events-none">
                   <span className="h-1.5 w-1.5 rounded-full bg-[#C97832] animate-pulse" />
                   <span>Projeto Real • Universo Paisagismo</span>
                 </div>
@@ -186,7 +186,7 @@ export function HeroLandscape3D({ children, className = "" }: HeroLandscape3DPro
                     }}
                     aria-label={isPlaying ? "Pausar vídeo" : "Reproduzir vídeo"}
                     title={isPlaying ? "Pausar" : "Reproduzir"}
-                    className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-white/10 hover:bg-white/25 active:scale-95 transition-all text-white"
+                    className="flex h-10 w-10 sm:h-7 sm:w-7 shrink-0 items-center justify-center rounded-full bg-white/10 hover:bg-white/25 active:scale-95 transition-all text-white"
                   >
                     {isPlaying ? (
                       <Pause size={13} weight="fill" />
@@ -207,7 +207,7 @@ export function HeroLandscape3D({ children, className = "" }: HeroLandscape3DPro
                       }}
                       aria-label={isMuted || volume === 0 ? "Ativar som" : "Desativar som"}
                       title={isMuted || volume === 0 ? "Ativar som" : "Desativar som"}
-                      className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-white/10 hover:bg-white/25 active:scale-95 transition-all text-white"
+                      className="flex h-10 w-10 sm:h-7 sm:w-7 shrink-0 items-center justify-center rounded-full bg-white/10 hover:bg-white/25 active:scale-95 transition-all text-white"
                     >
                       {isMuted || volume === 0 ? (
                         <SpeakerSlash size={14} weight="bold" />
@@ -252,7 +252,7 @@ export function HeroLandscape3D({ children, className = "" }: HeroLandscape3DPro
               <p className="mt-0.5 text-[11px] sm:text-xs font-semibold uppercase tracking-[0.14em] text-[#2F6B4F]">
                 {item.label}
               </p>
-              <p className="text-[10.5px] sm:text-[11px] text-[#526B45] leading-tight">
+              <p className="text-[11px] sm:text-[11px] text-[#526B45] leading-tight">
                 {item.subtitle}
               </p>
             </div>

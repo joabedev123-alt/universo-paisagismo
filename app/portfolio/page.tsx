@@ -44,7 +44,7 @@ export default function PortfolioPage() {
                     sizes="(max-width: 768px) 100vw, 50vw"
                   />
                   <div className="flex flex-1 flex-col p-8 md:p-10">
-                    <span className="inline-flex w-fit rounded-full bg-accent-soft px-2.5 py-0.5 font-mono text-[10px] uppercase tracking-wider text-accent">
+                    <span className="inline-flex w-fit rounded-full bg-accent-soft px-2.5 py-0.5 font-mono text-[11px] uppercase tracking-wider text-accent">
                       {item.tag}
                     </span>
                     <h2 className="mt-5 font-serif text-2xl tracking-tight text-ink">
@@ -64,7 +64,7 @@ export default function PortfolioPage() {
             </p>
             <Link
               href="/contato"
-              className="mt-4 inline-flex items-center justify-center gap-2 text-sm font-medium text-ink"
+              className="mt-2 inline-flex min-h-10 items-center justify-center gap-2 text-sm font-medium text-ink"
             >
               Agendar conversa
               <ArrowRight size={18} weight="bold" aria-hidden />

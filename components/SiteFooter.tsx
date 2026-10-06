@@ -47,12 +47,12 @@ export function SiteFooter() {
             <p className="font-mono text-xs uppercase tracking-[0.2em] text-[#C49A63] font-semibold">
               Navegação
             </p>
-            <ul className="mt-4 space-y-2.5">
+            <ul className="mt-3 space-y-0.5 sm:mt-4 sm:space-y-1">
               {navLinks.map((item) => (
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="text-sm text-[#D9C5A5]/85 transition-colors duration-200 hover:text-[#FAF9F5] hover:underline hover:decoration-[#C97832] underline-offset-4"
+                    className="inline-flex min-h-10 items-center text-sm text-[#D9C5A5]/85 transition-colors duration-200 hover:text-[#FAF9F5] hover:underline hover:decoration-[#C97832] underline-offset-4"
                   >
                     {item.label}
                   </Link>
@@ -66,13 +66,13 @@ export function SiteFooter() {
             <p className="font-mono text-xs uppercase tracking-[0.2em] text-[#C49A63] font-semibold">
               Contato
             </p>
-            <ul className="mt-4 space-y-3 text-sm text-[#D9C5A5]/85">
+            <ul className="mt-3 space-y-1 text-sm text-[#D9C5A5]/85">
               <li>
                 <a
                   href="https://wa.me/5531993915033"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2.5 transition-colors hover:text-[#FAF9F5]"
+                  className="inline-flex min-h-10 items-center gap-2.5 transition-colors hover:text-[#FAF9F5]"
                 >
                   <i className="bi bi-whatsapp text-[#25D366] text-base" aria-hidden="true" />
                   <span>(31) 99391-5033</span>
@@ -81,7 +81,7 @@ export function SiteFooter() {
               <li>
                 <a
                   href="mailto:universopaisagismos@gmail.com"
-                  className="inline-flex items-center gap-2.5 break-all transition-colors hover:text-[#FAF9F5]"
+                  className="inline-flex min-h-10 items-center gap-2.5 break-all transition-colors hover:text-[#FAF9F5]"
                 >
                   <i className="bi bi-envelope text-[#C49A63] text-base" aria-hidden="true" />
                   <span>universopaisagismos@gmail.com</span>
@@ -130,10 +130,10 @@ export function SiteFooter() {
         <div className="mt-14 border-t border-[#1F3327] pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#8A9B7A] font-light">
           <p>© 2026 Universo Paisagismo. Todos os direitos reservados.</p>
           <div className="flex items-center gap-6">
-            <Link href="/sobre" className="transition-colors hover:text-[#FAF9F5]">
+            <Link href="/sobre" className="inline-flex min-h-10 items-center transition-colors hover:text-[#FAF9F5]">
               Privacidade
             </Link>
-            <Link href="/sobre" className="transition-colors hover:text-[#FAF9F5]">
+            <Link href="/sobre" className="inline-flex min-h-10 items-center transition-colors hover:text-[#FAF9F5]">
               Termos de Uso
             </Link>
           </div>

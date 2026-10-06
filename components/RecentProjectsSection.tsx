@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Reveal } from "@/components/Reveal";
+import { LazyVideo } from "@/components/LazyVideo";
 
 // ============================================================================
 // CONFIGURAÇÃO DOS ARQUIVOS E DADOS DAS OBRAS RECENTES
@@ -131,19 +132,14 @@ export function RecentProjectsSection() {
             <Reveal delayMs={120} className="lg:col-span-7 h-full">
               <Link
                 href={project01.href}
-                className="group relative block h-[380px] sm:h-[460px] lg:h-full min-h-[380px] sm:min-h-[460px] lg:min-h-[520px] w-full overflow-hidden rounded-2xl border border-[#DDE5DC] bg-[#0D1F16] shadow-[0_16px_40px_rgba(13,31,22,0.08)] transition-all duration-500 hover:border-[#C49A63]/50 hover:shadow-[0_24px_55px_rgba(13,31,22,0.16)]"
+                className="group relative block h-[300px] sm:h-[360px] lg:h-full min-h-[300px] sm:min-h-[360px] lg:min-h-[416px] w-full overflow-hidden rounded-2xl border border-[#DDE5DC] bg-[#0D1F16] shadow-[0_16px_40px_rgba(13,31,22,0.08)] transition-all duration-500 hover:border-[#C49A63]/50 hover:shadow-[0_24px_55px_rgba(13,31,22,0.16)]"
               >
                 {/* Vídeo / Fotografia em movimento */}
-                <video
+                <LazyVideo
                   src={project01.src}
                   poster={project01.poster}
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  controls={false}
                   style={{ objectPosition: project01.objectPosition }}
-                  className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
                 />
 
                 {/* Gradiente sutil inferior para legibilidade tipográfica */}
@@ -156,7 +152,7 @@ export function RecentProjectsSection() {
                 <div className="absolute top-4 left-4 z-10">
                   <div className="inline-flex items-center gap-2 rounded-full bg-[#0D1F16]/75 backdrop-blur-md px-3 py-1 border border-white/15">
                     <span className="h-1.5 w-1.5 rounded-full bg-[#C97832] animate-pulse" aria-hidden="true" />
-                    <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-[#F4F1E9] font-medium">
+                    <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-[#F4F1E9] font-medium">
                       DESTAQUE REAL
                     </span>
                   </div>
@@ -190,7 +186,7 @@ export function RecentProjectsSection() {
               <Reveal delayMs={200} className="flex-1">
                 <Link
                   href={project02.href}
-                  className="group relative block aspect-[16/10] sm:aspect-[16/9] lg:aspect-auto lg:h-[248px] w-full overflow-hidden rounded-2xl border border-[#DDE5DC] bg-[#0D1F16] shadow-[0_12px_32px_rgba(13,31,22,0.06)] transition-all duration-500 hover:border-[#C49A63]/50 hover:shadow-[0_18px_45px_rgba(13,31,22,0.12)]"
+                  className="group relative block aspect-[16/10] sm:aspect-[16/9] lg:aspect-auto lg:h-[196px] w-full overflow-hidden rounded-2xl border border-[#DDE5DC] bg-[#0D1F16] shadow-[0_12px_32px_rgba(13,31,22,0.06)] transition-all duration-500 hover:border-[#C49A63]/50 hover:shadow-[0_18px_45px_rgba(13,31,22,0.12)]"
                 >
                   <Image
                     src={project02.src}
@@ -229,7 +225,7 @@ export function RecentProjectsSection() {
               <Reveal delayMs={280} className="flex-1">
                 <Link
                   href={project03.href}
-                  className="group relative block aspect-[16/10] sm:aspect-[16/9] lg:aspect-auto lg:h-[248px] w-full overflow-hidden rounded-2xl border border-[#DDE5DC] bg-[#0D1F16] shadow-[0_12px_32px_rgba(13,31,22,0.06)] transition-all duration-500 hover:border-[#C49A63]/50 hover:shadow-[0_18px_45px_rgba(13,31,22,0.12)]"
+                  className="group relative block aspect-[16/10] sm:aspect-[16/9] lg:aspect-auto lg:h-[196px] w-full overflow-hidden rounded-2xl border border-[#DDE5DC] bg-[#0D1F16] shadow-[0_12px_32px_rgba(13,31,22,0.06)] transition-all duration-500 hover:border-[#C49A63]/50 hover:shadow-[0_18px_45px_rgba(13,31,22,0.12)]"
                 >
                   <Image
                     src={project03.src}

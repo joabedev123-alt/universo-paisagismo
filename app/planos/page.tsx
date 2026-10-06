@@ -42,7 +42,7 @@ export default function PlanosPage() {
                 >
                   <h2 className="font-serif text-2xl tracking-tight text-ink">{plano.name}</h2>
                   <p className="mt-3 text-sm leading-relaxed text-muted">{plano.pitch}</p>
-                  <p className="mt-8 font-mono text-[10px] uppercase tracking-[0.18em] text-muted">
+                  <p className="mt-8 font-mono text-[11px] uppercase tracking-[0.18em] text-muted">
                     Inclui
                   </p>
                   <ul className="mt-4 flex-1 space-y-3">

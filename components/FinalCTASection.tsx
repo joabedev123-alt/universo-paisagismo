@@ -13,7 +13,6 @@ export function FinalCTASection() {
           src="/hero01.png"
           alt="Jardim finalizado com vegetação exuberante e arquitetura — Universo Paisagismo"
           fill
-          priority
           sizes="100vw"
           className="object-cover object-center transition-transform duration-1000 ease-out"
         />
